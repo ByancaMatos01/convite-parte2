@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Convite Romântico para Rayssa 💘</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      font-family: 'Pacifico', cursive;
+      background-image: url('imagem/imagem.png');
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 48px;
+      color: #fff;
+      text-shadow: 2px 2px #ff69b4;
+    }
+    p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 22px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    #sim {
+      background-color: #ff69b4;
+      color: white;
+    }
+    #nao {
+      background-color: #999;
+      color: white;
+    }
+    #gif {
+      margin-top: 40px;
+    }
+    img {
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rayssa 💌</h1>
+  <p>Você aceitaria ir ao cinema comigo? 🍿</p>
+  <p><strong>Filme:</strong> Premonição 6</p>
+  <p><strong>Dia:</strong> 17 de maio</p>
+  <p><strong>Hora:</strong> 15h</p>
+  <p><strong>Local:</strong> Shopping Tatuapé 🎥</p>
+
+  <button id="sim">Sim, vamos juntas! 💞</button>
+  <button id="nao">Não 😿</button>
+
+  <div id="gif"></div>
+  <audio id="musica" type="audio/mpeg"></audio>
+
+  <script>
+    const botaoSim = document.getElementById('sim');
+    const botaoNao = document.getElementById('nao');
+    const gif = document.getElementById('gif');
+    const musica = document.getElementById('musica');
+
+    botaoSim.onclick = () => {
+      musica.pause();
+      musica.src = "https://archive.org/download/carelesswhisper_201911/Careless%20Whisper.mp3";
+      musica.load();
+      musica.play();
+      gif.innerHTML = "<h2>Oba! Mal posso esperar 💖</h2><img src='https://media.giphy.com/media/Y4pAQv58ETJgRwoLxj/giphy.gif' width='320'>";
+    };
+
+    botaoNao.onclick = () => {
+      musica.pause();
+      musica.src = "";
+      musica.load();
+      musica.play();
+      gif.innerHTML = "<h2>😢 Poxa... Então vai se fuder </h2><img src='https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif' width='300'>";
+    };
+  </script>
+</body>
+</html>
